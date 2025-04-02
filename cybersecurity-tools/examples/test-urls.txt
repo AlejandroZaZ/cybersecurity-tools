@@ -1,0 +1,10 @@
+# Sample URLs for testing security vulnerabilities
+
+https://example.com/login.php  # Test for SQL Injection
+https://example.com/search?q=test  # Test for XSS
+https://example.com/admin/  # Test for unauthorized access
+https://example.com/uploads/  # Test for unrestricted file upload
+https://example.com/products?id=1  # Test for parameter manipulation
+https://example.com/robots.txt  # Check for sensitive file disclosures
+https://example.com/.git/  # Check for exposed Git repositories
+https://example.com/wp-admin  # Check for WordPress admin access
