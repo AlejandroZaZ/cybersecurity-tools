@@ -1,0 +1,14 @@
+# Core requirements
+colorama
+requests
+beautifulsoup4
+python-dateutil
+argparse
+
+# Networking and security
+scapy
+dnspython
+
+# Optional (for specific scripts)
+textwrap3
+hashlib

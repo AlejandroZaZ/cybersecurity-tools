@@ -1,93 +1,82 @@
-# Cybersecurity Tools
-
-### A Collection of Open-Source Security Tools for Professionals
-
-Welcome to **Cybersecurity Tools**, a collection of powerful, terminal-based security utilities for **network analysis, penetration testing, and vulnerability assessment**. These tools are designed for security professionals, ethical hackers, and researchers.
+## **Cybersecurity Tools** 🔐  
+*A collection of powerful terminal-based security tools for network analysis, penetration testing, and vulnerability assessment.*  
 
 ---
 
-## Explore the Tools
+### **📌 About the Project**  
+This project provides a set of open-source **cybersecurity tools** designed for security professionals, ethical hackers, and researchers. The tools cover various aspects of **network security, password security, monitoring, and web vulnerability scanning**.  
 
-### 🔎 **Network Security**
-#### **Intrusion Detection System**
-- Monitors network traffic for potential **Denial of Service (DoS) attacks**.
-- Tracks request counts per IP and bans suspicious activity.
-- **Keywords**: `Network` | `DoS Protection` | `Monitoring`
-- 📌 **Run**: `$ python ids.py --help`
-
-### 🔑 **Password Security**
-#### **Hash Cracker**
-- Cracks password hashes using dictionary attacks.
-- Supports multiple hash types.
-- **Keywords**: `Hash` | `Password Cracking`
-- 📌 **Run**: `$ python hash_cracker.py --help`
-
-#### **Password Strength Checker**
-- Analyzes password strength and security vulnerabilities.
-- Estimates crack time and provides improvement suggestions.
-- **Keywords**: `Password` | `Security Analysis`
-- 📌 **Run**: `$ python password_checker.py --help`
-
-### 📡 **Network Analysis**
-#### **Packet Sniffer**
-- Captures and analyzes network traffic.
-- Displays Ethernet frames, IP packets, and TCP/UDP segments.
-- **Keywords**: `Packet Analysis` | `Sniffing`
-- 📌 **Run**: `$ python packet_sniffer.py --help`
-
-#### **Port Scanner**
-- Scans target systems for open ports.
-- Identifies running services on detected ports.
-- **Keywords**: `Port Scanning` | `Network Reconnaissance`
-- 📌 **Run**: `$ python port_scanner.py --help`
-
-### 🌐 **Web Security**
-#### **Web Vulnerability Scanner**
-- Scans websites for common vulnerabilities such as **SQL Injection, XSS, and missing security headers**.
-- **Keywords**: `Web Security` | `Vulnerability Testing`
-- 📌 **Run**: `$ python web_scanner.py --help`
+> 🛠️ **Use these tools responsibly!** Ensure you have permission before testing on any network or system.  
 
 ---
 
-## ⚡ Quick Start
-Get started with these tools in minutes! Follow the simple steps below:
+### **📂 Features & Tools**  
 
-### 1️⃣ Clone the Repository
+#### 🛡 **Network Security**  
+- **Intrusion Detection System** (`ids.py`) → Detects potential DoS attacks.  
+- **Port Scanner** (`port_scanner.py`) → Scans for open ports on a target system.  
+- **Packet Sniffer** (`packet_sniffer.py`) → Captures and analyzes network packets.  
+
+#### 🔑 **Password Security**  
+- **Hash Cracker** (`hash_cracker.py`) → Cracks password hashes using wordlists.  
+- **Password Strength Checker** (`password_checker.py`) → Analyzes password security.  
+
+#### 🌐 **Web Security**  
+- **Web Vulnerability Scanner** (`web_scanner.py`) → Checks for SQL Injection, XSS, and other vulnerabilities.  
+
+---
+
+### **🚀 Installation & Setup**  
+
+1️⃣ **Clone the Repository:**  
 ```bash
-$ git clone https://github.com/GZ30eee/cybersecurity-tools.git
+git clone https://github.com/GZ30eee/cybersecurity-tools.git
+cd cybersecurity-tools
 ```
 
-### 2️⃣ Navigate to the Project Directory
+2️⃣ **Install Dependencies:**  
 ```bash
-$ cd cybersecurity-tools
+pip install -r requirements.txt
 ```
 
-### 3️⃣ Install Dependencies
+3️⃣ **Run Any Tool:**  
 ```bash
-$ pip install -r requirements.txt
+python tools/network/ids.py --help
 ```
 
-### 4️⃣ Run Any Tool
+4️⃣ **Run All Tools:**  
 ```bash
-$ python <tool_name>.py --help
+python scripts/run_all_tools.py
 ```
-
-📖 **[View Full Documentation](#)** (Coming Soon!)
 
 ---
 
-## 🤝 Contributing
-We welcome contributions! If you find a bug or have a feature request, feel free to **open an issue or submit a pull request**.
+### **📖 Usage Example**  
+
+🔹 **Run the Port Scanner:**  
+```bash
+python tools/network/port_scanner.py -t 192.168.1.1 -p 1-1000
+```
+
+🔹 **Check Password Strength:**  
+```bash
+python tools/password/password_checker.py --password "MySecurePass123!"
+```
+
+🔹 **Scan a Website for Vulnerabilities:**  
+```bash
+python tools/web/web_scanner.py --url https://example.com
+```
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+### **📜 License**  
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.  
 
 ---
 
-## 📞 Contact
-- **GitHub**: [View Repository](https://github.com/GZ30eee/cybersecurity-tools)
-- **Email**: ghza3006@gmail.com
+### **📬 Contact & Contributions**  
+- **GitHub:** [Cybersecurity Tools](https://github.com/GZ30eee/cybersecurity-tools)  
+- **Issues & Suggestions:** Feel free to open an issue or submit a pull request!  
 
-© 2025 Cybersecurity Tools | **Privacy Policy**
+🤖 **Happy Hacking! Stay Secure!** 🛡  

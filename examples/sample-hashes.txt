@@ -1,0 +1,12 @@
+# Sample Password Hashes (MD5, SHA1, SHA256)
+# These hashes correspond to simple passwords for testing purposes.
+
+5f4dcc3b5aa765d61d8327deb882cf99  # "password" (MD5)
+7c6a180b36896a0a8c02787eeafb0e4c  # "123456" (MD5)
+e10adc3949ba59abbe56e057f20f883e  # "123456789" (MD5)
+
+b1b3773a05c0ed0176787a4f1574ff0075f7521e  # "letmein" (SHA1)
+7c222fb2927d828af22f592134e8932480637c0d  # "admin" (SHA1)
+
+5e884898da28047151d0e56f8dc6292773603d0d5a0ad83d59be47bb25593542  # "password" (SHA256)
+ef92b778bafee3d45e05fb4a0c7fd5b6c15b32e65f25b315f7d2aaf2008f7f7c  # "securepassword" (SHA256)
