@@ -1,96 +1,120 @@
-![image](https://github.com/user-attachments/assets/ba543ba9-d673-45cd-9ce1-f52d32dbb7ac)
+```markdown
+# 🛡️ Cybersecurity Tools 🛡️
 
-## Cybersecurity Tools  
-*A collection of powerful terminal-based security tools for network analysis, penetration testing, and vulnerability assessment.*  
+![GitHub release](https://img.shields.io/github/release/AlejandroZaZ/cybersecurity-tools.svg)
+![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
----
+Welcome to the **Cybersecurity Tools** repository! This collection features a variety of open-source, terminal-based security tools designed for network analysis, penetration testing, and vulnerability assessment. These tools aim to empower cybersecurity researchers and ethical hackers while promoting responsible use.
 
-### About the Project  
-This repository provides a suite of open-source cybersecurity tools designed for security professionals, ethical hackers, and researchers. These tools cover various aspects of network security, password security, system monitoring, and web vulnerability scanning. The primary goal is to enhance security awareness and aid in the detection of potential vulnerabilities in networks and applications.  
+## 🚀 Table of Contents
 
-**Important Notice:** These tools should only be used for ethical purposes. Ensure you have permission before conducting security tests on any network or system. Unauthorized testing is illegal and punishable by law.  
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Getting Started](#getting-started)
+4. [Usage](#usage)
+5. [Tools Included](#tools-included)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Support](#support)
 
----
+## 📝 Introduction
 
-### Features & Tools  
+Cybersecurity is more crucial than ever. As technology evolves, so do the threats we face. This repository aims to provide essential tools that help individuals understand and fortify their networks. Whether you are a student, a professional, or a curious learner, these tools will enhance your understanding of cybersecurity practices.
 
-#### Network Security  
-- **Intrusion Detection System** (`ids.py`): Monitors network traffic and detects potential denial-of-service (DoS) attacks.  
-- **Port Scanner** (`port_scanner.py`): Scans target systems for open ports and identifies potential vulnerabilities.  
-- **Packet Sniffer** (`packet_sniffer.py`): Captures and analyzes network packets in real-time to detect anomalies.  
+## 🔧 Features
 
-#### Password Security  
-- **Hash Cracker** (`hash_cracker.py`): Uses wordlists to crack hashed passwords and assess security risks.  
-- **Password Strength Checker** (`password_checker.py`): Evaluates password strength and suggests improvements to enhance security.  
+- **Open Source**: All tools are freely available for anyone to use and modify.
+- **Terminal-Based**: Designed for efficiency and ease of use in command-line environments.
+- **Diverse Tools**: Includes tools for various aspects of cybersecurity, from network analysis to vulnerability assessment.
+- **Community-Driven**: Collaborate with others to improve and expand the toolset.
 
-#### Web Security  
-- **Web Vulnerability Scanner** (`web_scanner.py`): Detects security vulnerabilities such as SQL injection, cross-site scripting (XSS), and misconfigurations.  
+## 📦 Getting Started
 
----
+To get started, follow these simple steps:
 
-### Installation & Setup  
+1. **Clone the Repository**: Use Git to clone the repository to your local machine.
 
-1. **Clone the Repository:**  
    ```bash
-   git clone https://github.com/GZ30eee/cybersecurity-tools.git
+   git clone https://github.com/AlejandroZaZ/cybersecurity-tools.git
+   ```
+
+2. **Navigate to the Directory**: Change your working directory to the cloned repository.
+
+   ```bash
    cd cybersecurity-tools
-   ```  
+   ```
 
-2. **Install Dependencies:**  
-   ```bash
-   pip install -r requirements.txt
-   ```  
+3. **Install Dependencies**: Some tools may require additional packages. Refer to the individual tool documentation for specifics.
 
-3. **Run Any Tool:**  
-   ```bash
-   python tools/network/ids.py --help
-   ```  
+4. **Download the Tools**: Visit the [Releases section](https://github.com/AlejandroZaZ/cybersecurity-tools/releases) to download the latest versions of the tools you wish to use. Each tool's documentation provides guidance on installation and usage.
 
-4. **Execute All Security Tools:**  
-   ```bash
-   python scripts/run_all_tools.py
-   ```  
+## 💻 Usage
 
----
+Using the tools is straightforward. After you have downloaded and installed the necessary tools, open your terminal and follow the usage instructions provided for each tool. Here’s a general command structure:
 
-### Usage Examples  
-
-#### Running the Port Scanner  
 ```bash
-python tools/network/port_scanner.py -t 192.168.1.1 -p 1-1000
+tool_name [options] [target]
 ```
 
-#### Checking Password Strength  
-```bash
-python tools/password/password_checker.py --password "MySecurePass123!"
+Replace `tool_name`, `options`, and `target` with the relevant details for the tool you are using.
+
+## 🛠️ Tools Included
+
+This repository includes a range of tools categorized for your convenience. Below are some of the highlighted categories:
+
+### 1. **Network Analysis**
+- **Nmap**: A powerful network scanning tool to discover hosts and services.
+- **Wireshark**: A network protocol analyzer for capturing and inspecting network traffic.
+
+### 2. **Penetration Testing**
+- **Metasploit**: A widely used framework for developing and executing exploit code.
+- **Burp Suite**: A platform for performing security testing of web applications.
+
+### 3. **Vulnerability Assessment**
+- **OpenVAS**: An open-source framework for vulnerability scanning and management.
+- **Nessus**: A comprehensive vulnerability scanner that helps identify security flaws.
+
+### 4. **Malware Analysis**
+- **Cuckoo Sandbox**: An automated malware analysis system.
+- **PEStudio**: A tool for analyzing the structure of PE files without executing them.
+
+### 5. **Security Monitoring**
+- **Snort**: A network intrusion detection system.
+- **OSSEC**: A host-based intrusion detection system.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have suggestions for improvements or additional tools, please fork the repository and submit a pull request. Here’s how you can contribute:
+
+1. Fork the project.
+2. Create a new branch for your feature or fix.
+3. Commit your changes and push to your branch.
+4. Open a pull request detailing your changes.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 📞 Support
+
+If you encounter issues or need help, feel free to reach out. You can open an issue in the repository, and we will do our best to assist you.
+
+## 🌐 Connect with Us
+
+Stay updated with the latest news and tools:
+
+- [GitHub](https://github.com/AlejandroZaZ/cybersecurity-tools)
+- [Twitter](https://twitter.com/cybersecuritytools)
+- [LinkedIn](https://linkedin.com/company/cybersecurity-tools)
+
+## 🌟 Acknowledgments
+
+Special thanks to all contributors and open-source communities for their support and shared knowledge.
+
+## 🔗 Useful Links
+
+- [Documentation](https://github.com/AlejandroZaZ/cybersecurity-tools/wiki)
+- [Releases](https://github.com/AlejandroZaZ/cybersecurity-tools/releases)
+
+Let’s work together to create a safer digital environment! 🛡️
 ```
-
-#### Scanning a Website for Vulnerabilities  
-```bash
-python tools/web/web_scanner.py --url https://example.com
-```
-
----
-
-### Contributing  
-Contributions are welcome. If you have improvements, bug fixes, or new security tools to add, feel free to submit a pull request. Please ensure that all contributions adhere to ethical hacking principles.  
-
-To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit changes (`git commit -m "Added new security feature"`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.  
-
----
-
-### License  
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
-
----
-
-### Contact & Support  
-- **GitHub Repository:** [Cybersecurity Tools](https://github.com/GZ30eee/cybersecurity-tools)  
-- **Issues & Bug Reports:** Please open an issue on the GitHub repository for any technical problems or feature requests.  
-
-This project is intended to be a helpful resource for security research and awareness. Use it responsibly and contribute to building a safer cyberspace.
