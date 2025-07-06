@@ -1,120 +1,163 @@
-```markdown
 # 🛡️ Cybersecurity Tools 🛡️
 
 ![GitHub release](https://img.shields.io/github/release/AlejandroZaZ/cybersecurity-tools.svg)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
-Welcome to the **Cybersecurity Tools** repository! This collection features a variety of open-source, terminal-based security tools designed for network analysis, penetration testing, and vulnerability assessment. These tools aim to empower cybersecurity researchers and ethical hackers while promoting responsible use.
+---
 
-## 🚀 Table of Contents
+## 🧩 Overview
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Getting Started](#getting-started)
-4. [Usage](#usage)
-5. [Tools Included](#tools-included)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Support](#support)
+**Cybersecurity Tools** is a curated collection of open-source, terminal-based utilities for network analysis, penetration testing, and vulnerability assessment. Designed for researchers, ethical hackers, and learners, this toolkit empowers you to explore, test, and secure your environments responsibly.
+
+---
+
+## 📑 Menu
+
+* [Introduction](#-introduction)
+* [Features](#-features)
+* [Getting Started](#-getting-started)
+* [Usage](#-usage)
+* [Tools Included](#-tools-included)
+* [Repository Structure & Available Tools](#-repository-structure--available-tools)
+* [Contributing](#-contributing)
+* [License](#-license)
+* [Support](#-support)
+* [Connect](#-connect-with-us)
+* [Acknowledgments](#-acknowledgments)
+
+---
 
 ## 📝 Introduction
 
-Cybersecurity is more crucial than ever. As technology evolves, so do the threats we face. This repository aims to provide essential tools that help individuals understand and fortify their networks. Whether you are a student, a professional, or a curious learner, these tools will enhance your understanding of cybersecurity practices.
+Cybersecurity is more crucial than ever. As threats evolve, so must our defenses. This repository provides essential, community-driven tools to help you understand, test, and harden your networks and applications.
+
+---
 
 ## 🔧 Features
 
-- **Open Source**: All tools are freely available for anyone to use and modify.
-- **Terminal-Based**: Designed for efficiency and ease of use in command-line environments.
-- **Diverse Tools**: Includes tools for various aspects of cybersecurity, from network analysis to vulnerability assessment.
-- **Community-Driven**: Collaborate with others to improve and expand the toolset.
+* **Open Source** – Freely use, modify, and extend every tool.
+* **Terminal-Based** – Lightweight, scriptable, and efficient.
+* **Wide Coverage** – From network scanning to malware analysis.
+* **Community-Driven** – Collaborate, suggest new tools, and share improvements.
+
+---
 
 ## 📦 Getting Started
 
-To get started, follow these simple steps:
+1. **Clone the repository**
 
-1. **Clone the Repository**: Use Git to clone the repository to your local machine.
-
-   ```bash
-   git clone https://github.com/AlejandroZaZ/cybersecurity-tools.git
    ```
-
-2. **Navigate to the Directory**: Change your working directory to the cloned repository.
-
-   ```bash
+   git clone https://github.com/AlejandroZaZ/cybersecurity-tools.git
    cd cybersecurity-tools
    ```
 
-3. **Install Dependencies**: Some tools may require additional packages. Refer to the individual tool documentation for specifics.
+2. **Install dependencies**
+   Check each tool’s docs in the `tools/` folder for required packages.
 
-4. **Download the Tools**: Visit the [Releases section](https://github.com/AlejandroZaZ/cybersecurity-tools/releases) to download the latest versions of the tools you wish to use. Each tool's documentation provides guidance on installation and usage.
+3. **Run a tool**
+
+   ```
+   cd tools/<tool-name>
+   ./<tool-script> [options] [target]
+   ```
+
+---
 
 ## 💻 Usage
 
-Using the tools is straightforward. After you have downloaded and installed the necessary tools, open your terminal and follow the usage instructions provided for each tool. Here’s a general command structure:
+Most tools follow this general pattern:
 
-```bash
+```
 tool_name [options] [target]
 ```
 
-Replace `tool_name`, `options`, and `target` with the relevant details for the tool you are using.
+Refer to each tool's folder or README for specific instructions.
+
+---
 
 ## 🛠️ Tools Included
 
-This repository includes a range of tools categorized for your convenience. Below are some of the highlighted categories:
+### 1. Network Analysis
 
-### 1. **Network Analysis**
-- **Nmap**: A powerful network scanning tool to discover hosts and services.
-- **Wireshark**: A network protocol analyzer for capturing and inspecting network traffic.
+* **Nmap** – Discover hosts and open ports.
+* **Wireshark** – Capture and inspect network traffic.
 
-### 2. **Penetration Testing**
-- **Metasploit**: A widely used framework for developing and executing exploit code.
-- **Burp Suite**: A platform for performing security testing of web applications.
+### 2. Penetration Testing
 
-### 3. **Vulnerability Assessment**
-- **OpenVAS**: An open-source framework for vulnerability scanning and management.
-- **Nessus**: A comprehensive vulnerability scanner that helps identify security flaws.
+* **Metasploit Framework** – Develop and run exploit code.
+* **Burp Suite** – Intercept and test web application traffic.
 
-### 4. **Malware Analysis**
-- **Cuckoo Sandbox**: An automated malware analysis system.
-- **PEStudio**: A tool for analyzing the structure of PE files without executing them.
+### 3. Vulnerability Assessment
 
-### 5. **Security Monitoring**
-- **Snort**: A network intrusion detection system.
-- **OSSEC**: A host-based intrusion detection system.
+* **OpenVAS** – Automated vulnerability scanning.
+* **Nessus** – Identify security flaws across systems.
+
+### 4. Malware Analysis
+
+* **Cuckoo Sandbox** – Dynamic analysis of suspicious binaries.
+* **PEStudio** – Static inspection of Windows executables.
+
+### 5. Security Monitoring
+
+* **Snort** – Network intrusion detection.
+* **OSSEC** – Host-based intrusion detection.
+
+---
+
+## 📂 Repository Structure & Available Tools
+
+Visit the [`tools/`](https://github.com/AlejandroZaZ/cybersecurity-tools/tree/master/tools) directory to view all tools currently available. Each folder contains the relevant code, configs, or scripts.
+
+Example structure:
+
+```
+cybersecurity-tools/
+├── docs/
+├── examples/
+├── scripts/
+└── tools/
+    ├── nmap/
+    ├── wireshark/
+    ├── metasploit/
+    ├── burpsuite/
+    └── ...
+```
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have suggestions for improvements or additional tools, please fork the repository and submit a pull request. Here’s how you can contribute:
+We welcome contributions!
 
-1. Fork the project.
-2. Create a new branch for your feature or fix.
-3. Commit your changes and push to your branch.
-4. Open a pull request detailing your changes.
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/my-tool`
+3. Add or improve code/docs
+4. Commit and push your changes
+5. Open a Pull Request with a clear description
 
-## 📜 License
+---
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+## 📄 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## 📞 Support
 
-If you encounter issues or need help, feel free to reach out. You can open an issue in the repository, and we will do our best to assist you.
+If you encounter issues or need help, please open an issue in this repository.
+
+---
 
 ## 🌐 Connect with Us
 
-Stay updated with the latest news and tools:
+* [GitHub](https://github.com/AlejandroZaZ)
+* [Twitter](https://twitter.com/AlejandroZaZ)
+* [LinkedIn](https://linkedin.com/in/alejandrozaz)
 
-- [GitHub](https://github.com/AlejandroZaZ/cybersecurity-tools)
-- [Twitter](https://twitter.com/cybersecuritytools)
-- [LinkedIn](https://linkedin.com/company/cybersecurity-tools)
+---
 
-## 🌟 Acknowledgments
+## 🙏 Acknowledgments
 
-Special thanks to all contributors and open-source communities for their support and shared knowledge.
-
-## 🔗 Useful Links
-
-- [Documentation](https://github.com/AlejandroZaZ/cybersecurity-tools/wiki)
-- [Releases](https://github.com/AlejandroZaZ/cybersecurity-tools/releases)
-
-Let’s work together to create a safer digital environment! 🛡️
-```
+Thanks to all contributors and the wider open-source security community for their tools, research, and support.
