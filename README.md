@@ -1,21 +1,23 @@
-```markdown
 # 🛡️ Cybersecurity Tools 🛡️
 
 ![GitHub release](https://img.shields.io/github/release/AlejandroZaZ/cybersecurity-tools.svg)
 ![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
+---
+
 Welcome to the **Cybersecurity Tools** repository! This collection features a variety of open-source, terminal-based security tools designed for network analysis, penetration testing, and vulnerability assessment. These tools aim to empower cybersecurity researchers and ethical hackers while promoting responsible use.
 
 ## 🚀 Table of Contents
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Getting Started](#getting-started)
-4. [Usage](#usage)
-5. [Tools Included](#tools-included)
-6. [Contributing](#contributing)
-7. [License](#license)
-8. [Support](#support)
+- [Introduction](#-introduction)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [Usage](#-usage)
+- [Tools Included](#️-tools-included)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Support](#-support)
+- [Connect with Us](#-connect-with-us)
 
 ## 📝 Introduction
 
@@ -62,25 +64,30 @@ Replace `tool_name`, `options`, and `target` with the relevant details for the t
 
 This repository includes a range of tools categorized for your convenience. Below are some of the highlighted categories:
 
-### 1. **Network Analysis**
-- **Nmap**: A powerful network scanning tool to discover hosts and services.
-- **Wireshark**: A network protocol analyzer for capturing and inspecting network traffic.
+### Network Analysis
 
-### 2. **Penetration Testing**
-- **Metasploit**: A widely used framework for developing and executing exploit code.
-- **Burp Suite**: A platform for performing security testing of web applications.
+- **[Nmap](https://nmap.org/)**: A powerful network scanning tool to discover hosts and services.
+- **[Wireshark](https://www.wireshark.org/)**: A network protocol analyzer for capturing and inspecting network traffic.
 
-### 3. **Vulnerability Assessment**
-- **OpenVAS**: An open-source framework for vulnerability scanning and management.
-- **Nessus**: A comprehensive vulnerability scanner that helps identify security flaws.
+### Penetration Testing
 
-### 4. **Malware Analysis**
-- **Cuckoo Sandbox**: An automated malware analysis system.
-- **PEStudio**: A tool for analyzing the structure of PE files without executing them.
+- **[Metasploit](https://www.metasploit.com/)**: A widely used framework for developing and executing exploit code.
+- **[Burp Suite](https://portswigger.net/burp)**: A platform for performing security testing of web applications.
 
-### 5. **Security Monitoring**
-- **Snort**: A network intrusion detection system.
-- **OSSEC**: A host-based intrusion detection system.
+### Vulnerability Assessment
+
+- **[OpenVAS](https://www.openvas.org/)**: An open-source framework for vulnerability scanning and management.
+- **[Nessus](https://www.tenable.com/products/nessus)**: A comprehensive vulnerability scanner that helps identify security flaws.
+
+### Malware Analysis
+
+- **[Cuckoo Sandbox](https://cuckoo.readthedocs.io/en/latest/introduction/what/)**: An automated malware analysis system.
+- **[PEStudio](https://www.winitor.com/)**: A tool for analyzing the structure of PE files without executing them.
+
+### Security Monitoring
+
+- **[Snort](https://www.snort.org/)**: A network intrusion detection system.
+- **[OSSEC](https://www.ossec.net/)**: A host-based intrusion detection system.
 
 ## 🤝 Contributing
 
@@ -116,5 +123,6 @@ Special thanks to all contributors and open-source communities for their support
 - [Documentation](https://github.com/AlejandroZaZ/cybersecurity-tools/wiki)
 - [Releases](https://github.com/AlejandroZaZ/cybersecurity-tools/releases)
 
+---
+
 Let’s work together to create a safer digital environment! 🛡️
-```
