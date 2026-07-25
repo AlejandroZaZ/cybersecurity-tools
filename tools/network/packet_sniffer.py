@@ -67,9 +67,12 @@ class PacketSniffer:
     def process_packet(self, raw_data):
         """Process each captured packet."""
         dest_mac, src_mac, eth_proto, data = self.ethernet_frame(raw_data)
-        
-        # Apply protocol filter if set
-        if self.filter_proto and eth_proto != getattr(self, f'PROTO_{self.filter_proto}', None):
+
+        # IPv4-level filters: only pass IPv4 frames through for further inspection
+        if self.filter_proto in ('TCP', 'UDP', 'ICMP') and eth_proto != self.PROTO_IPV4:
+            return
+        # Ethernet-level filter for IPv4
+        if self.filter_proto == 'IPV4' and eth_proto != self.PROTO_IPV4:
             return
 
         self.print_frame('Ethernet Frame', [
@@ -85,6 +88,12 @@ class PacketSniffer:
     def process_ipv4(self, data):
         """Process IPv4 packet."""
         version, header_length, ttl, proto, src, target, payload = self.ipv4_packet(data)
+
+        # Apply transport-layer filter (TCP/UDP/ICMP)
+        proto_filter_map = {'TCP': self.PROTO_TCP, 'UDP': self.PROTO_UDP, 'ICMP': self.PROTO_ICMP}
+        if self.filter_proto in proto_filter_map and proto != proto_filter_map[self.filter_proto]:
+            return
+
         self.print_frame('IPv4 Packet', [
             f"Version: {version}",
             f"Header Length: {header_length} bytes",
@@ -154,7 +163,7 @@ class PacketSniffer:
             text = data.decode('utf-8', errors='ignore')
             wrapped = textwrap.fill(text, width=80, initial_indent='    ', subsequent_indent='    ')
             print(wrapped)
-        except:
+        except Exception:
             print(f"    {repr(data[:100])}{'...' if len(data) > 100 else ''}")
         logging.info(f"{title}: {repr(data[:100])}")
 

@@ -1,11 +1,8 @@
 import re
 import getpass
-import argparse  # Added import
+import argparse
 import sys
-import time
-from datetime import datetime
 from colorama import init, Fore, Style
-import hashlib
 import logging
 
 # Initialize colorama for colored output

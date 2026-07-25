@@ -3,7 +3,7 @@ import time
 import argparse
 import sys
 import threading
-from queue import Queue
+from queue import Queue, Empty
 from colorama import init, Fore, Style
 import logging
 
@@ -49,7 +49,7 @@ class HashCracker:
 
     def worker(self):
         """Thread worker to crack hash."""
-        while True:
+        while not self.found:
             try:
                 word = self.queue.get_nowait()
                 with self.lock:
@@ -65,7 +65,7 @@ class HashCracker:
                             print(f"Attempts: {self.attempts:,}")
                             logging.info(f"Password found: {word}, Time: {elapsed:.2f}s, Attempts: {self.attempts}")
                 self.queue.task_done()
-            except Queue.Empty:
+            except Empty:
                 break
             except Exception as e:
                 print(f"{Fore.RED}[ERROR] Thread error: {str(e)}{Style.RESET_ALL}")

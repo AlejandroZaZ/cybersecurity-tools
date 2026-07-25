@@ -91,17 +91,19 @@ class VulnerabilityScanner:
             "test", "private", "uploads", "tmp"
         ]
         
+        found = False
         for directory in directories:
             try:
-                test_url = urljoin(self.url, directory)
+                test_url = urljoin(self.url + '/', directory)
                 response = self.session.get(test_url, timeout=self.timeout)
                 soup = BeautifulSoup(response.text, 'html.parser')
-                
                 if "index of" in response.text.lower() or soup.find('title', string=lambda t: t and "index of" in t.lower()):
                     self.print_result(f"[!] Directory listing enabled at {test_url}", True)
+                    found = True
             except requests.RequestException as e:
                 self.print_result(f"[WARNING] Error checking directory: {test_url} - {str(e)}")
-        self.print_result("[✓] No directory listing vulnerabilities found")
+        if not found:
+            self.print_result("[✓] No directory listing vulnerabilities found")
 
     def check_security_headers(self):
         try:
@@ -124,16 +126,76 @@ class VulnerabilityScanner:
         except requests.RequestException as e:
             self.print_result(f"[WARNING] Error checking security headers: {str(e)}")
 
+    def check_open_redirect(self):
+        redirect_params = ['url', 'redirect', 'next', 'return', 'goto', 'dest', 'destination']
+        external_url = 'https://example.com'
+
+        for param in redirect_params:
+            try:
+                test_url = f"{self.url}?{param}={external_url}"
+                response = self.session.get(test_url, timeout=self.timeout, allow_redirects=False)
+                location = response.headers.get('Location', '')
+                if response.status_code in (301, 302, 303, 307, 308) and external_url in location:
+                    self.print_result(f"[!] Open redirect via param '{param}' at {test_url}", True)
+                    return
+            except requests.RequestException as e:
+                self.print_result(f"[WARNING] Error checking open redirect: {str(e)}")
+        self.print_result("[✓] No open redirect vulnerabilities found")
+
+    def check_path_traversal(self):
+        payloads = [
+            "../../../../etc/passwd",
+            "..%2F..%2F..%2Fetc%2Fpasswd",
+            "....//....//etc/passwd",
+        ]
+        params = ['file', 'path', 'page', 'include', 'doc', 'filename']
+
+        for param in params:
+            for payload in payloads:
+                try:
+                    test_url = f"{self.url}?{param}={payload}"
+                    response = self.session.get(test_url, timeout=self.timeout)
+                    if 'root:' in response.text or 'bin/bash' in response.text:
+                        self.print_result(f"[!] Path traversal vulnerability at {test_url}", True)
+                        return
+                except requests.RequestException as e:
+                    self.print_result(f"[WARNING] Error checking path traversal: {str(e)}")
+        self.print_result("[✓] No path traversal vulnerabilities found")
+
+    def check_csrf(self):
+        try:
+            response = self.session.get(self.url, timeout=self.timeout)
+            soup = BeautifulSoup(response.text, 'html.parser')
+            forms = soup.find_all('form', method=lambda m: m and m.lower() == 'post')
+
+            if not forms:
+                self.print_result("[✓] No POST forms found (CSRF check skipped)")
+                return
+
+            csrf_field_names = {'csrf', 'csrf_token', '_token', 'authenticity_token', '__requestverificationtoken'}
+            for form in forms:
+                inputs = {inp.get('name', '').lower() for inp in form.find_all('input', type='hidden')}
+                if not inputs & csrf_field_names:
+                    action = form.get('action', self.url)
+                    self.print_result(f"[!] POST form without CSRF token at {action}", True)
+                    return
+            self.print_result("[✓] CSRF tokens present in POST forms")
+        except requests.RequestException as e:
+            self.print_result(f"[WARNING] Error checking CSRF: {str(e)}")
+
     def scan(self):
         print(f"{Fore.CYAN}Starting vulnerability scan for {self.url}{Style.RESET_ALL}")
         print(f"{Fore.CYAN}{'='*50}{Style.RESET_ALL}")
-        
+
         start_time = time.time()
-        
+
         self.check_sql_injection()
         self.check_xss()
         self.check_directory_listing()
         self.check_security_headers()
+        self.check_open_redirect()
+        self.check_path_traversal()
+        self.check_csrf()
         
         end_time = time.time()
         duration = round(end_time - start_time, 2)

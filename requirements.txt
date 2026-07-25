@@ -8,6 +8,7 @@ argparse
 # Networking and security
 scapy
 dnspython
+paramiko
 
 # Optional (for specific scripts)
 textwrap3

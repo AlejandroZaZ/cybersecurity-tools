@@ -85,7 +85,7 @@ class SimpleIDS:
                 with self.lock:
                     self.packet_count += 1
                 
-                src_mac, dest_mac, eth_proto, data = self.ethernet_frame(raw_data)
+                dest_mac, src_mac, eth_proto, data = self.ethernet_frame(raw_data)
                 
                 # IPv4 only
                 if eth_proto == 8:

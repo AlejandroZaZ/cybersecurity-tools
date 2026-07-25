@@ -11,12 +11,13 @@ from colorama import init, Fore, Style
 init()
 
 class PortScanner:
-    def __init__(self, target, port_range, timeout=1, threads=100):
+    def __init__(self, target, port_range, timeout=1, threads=100, banner=False):
         self.target = target
         self.start_port, self.end_port = map(int, port_range.split('-'))
         self.ports = range(self.start_port, self.end_port + 1)
         self.timeout = timeout
         self.threads = threads
+        self.banner = banner
         self.open_ports = []
         self.port_queue = queue.Queue()
         self.lock = threading.Lock()
@@ -30,26 +31,46 @@ class PortScanner:
             print(f"{Fore.RED}[ERROR] Could not resolve hostname: {self.target}{Style.RESET_ALL}")
             sys.exit(1)
 
-    def scan_port(self, ip, port):
-        """Scan a single port."""
+    def grab_banner(self, ip, port):
+        """Grab service banner from an open port."""
         try:
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(self.timeout)
+            sock.connect((ip, port))
+            # Send HTTP request for web ports, generic probe otherwise
+            if port in (80, 8080, 8000, 8443):
+                sock.send(b"HEAD / HTTP/1.0\r\nHost: " + ip.encode() + b"\r\n\r\n")
+            else:
+                sock.send(b"\r\n")
+            banner = sock.recv(1024).decode('utf-8', errors='ignore').strip()
+            sock.close()
+            return banner[:200] if banner else None
+        except Exception:
+            return None
+
+    def scan_port(self, ip, port):
+        """Scan a single port."""
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
             sock.settimeout(self.timeout)
             result = sock.connect_ex((ip, port))
             if result == 0:
                 service = self.get_service(port)
+                banner = self.grab_banner(ip, port) if self.banner else None
                 with self.lock:
-                    self.open_ports.append((port, service))
-                    print(f"{Fore.GREEN}[OPEN] Port {port} - {service}{Style.RESET_ALL}")
-            sock.close()
+                    self.open_ports.append((port, service, banner))
+                    banner_str = f" | {banner.splitlines()[0]}" if banner else ""
+                    print(f"{Fore.GREEN}[OPEN] Port {port} - {service}{banner_str}{Style.RESET_ALL}")
         except socket.error:
-            pass  # Silently skip socket errors for individual ports
+            pass
+        finally:
+            sock.close()
 
     def get_service(self, port):
         """Attempt to identify service running on the port."""
         try:
             return socket.getservbyport(port)
-        except:
+        except Exception:
             return "Unknown"
 
     def worker(self, ip):
@@ -99,8 +120,12 @@ class PortScanner:
         print(f"{Fore.YELLOW}Scan completed in {duration} seconds")
         if self.open_ports:
             print(f"Open ports found: {len(self.open_ports)}")
-            for port, service in sorted(self.open_ports):
-                print(f"  {port}: {service}")
+            for entry in sorted(self.open_ports, key=lambda x: x[0]):
+                port, service, banner = entry
+                line = f"  {port}: {service}"
+                if banner:
+                    line += f" | {banner.splitlines()[0]}"
+                print(line)
         else:
             print(f"{Fore.GREEN}No open ports found.{Style.RESET_ALL}")
 
@@ -111,6 +136,7 @@ def main():
     parser.add_argument("ports", help="Port range to scan (e.g., 1-100)")
     parser.add_argument("--timeout", type=float, default=1.0, help="Socket timeout in seconds (default: 1.0)")
     parser.add_argument("--threads", type=int, default=100, help="Number of threads (default: 100)")
+    parser.add_argument("--banner", action="store_true", help="Attempt to grab service banners")
     args = parser.parse_args()
 
     # Validate port range
@@ -124,7 +150,7 @@ def main():
 
     # Initialize and run scanner
     try:
-        scanner = PortScanner(args.target, args.ports, args.timeout, args.threads)
+        scanner = PortScanner(args.target, args.ports, args.timeout, args.threads, args.banner)
         scanner.scan()
     except KeyboardInterrupt:
         print(f"{Fore.RED}[!] Scan interrupted by user{Style.RESET_ALL}")
