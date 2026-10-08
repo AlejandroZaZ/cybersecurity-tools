@@ -69,6 +69,7 @@ This repository includes a range of tools categorized for your convenience. Belo
 ### 2. **Penetration Testing**
 - **Metasploit**: A widely used framework for developing and executing exploit code.
 - **Burp Suite**: A platform for performing security testing of web applications.
+- **Darkmoon**: An open source autonomous penetration testing platform that orchestrates 50 specialist agents over MCP and produces reproducible proof of exploitation, self hosted via Docker.
 
 ### 3. **Vulnerability Assessment**
 - **OpenVAS**: An open-source framework for vulnerability scanning and management.
